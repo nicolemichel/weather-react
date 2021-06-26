@@ -15,11 +15,7 @@ export default function Forecast() {
                 <div className="col-6">
                   <p className="card-text">
                     <img
-                      src="https://openweathermap.org/img/wn/${
-                        forecastDay.weather[0].icon
-                      }@2x.png"
-                      alt=""
-                      width="100px"
+                      src=""
                     />
                   </p>
                 </div>
@@ -48,9 +44,7 @@ export default function Forecast() {
                 <div className="col-6">
                   <p className="card-text">
                     <img
-                      src="https://openweathermap.org/img/wn/${
-                    forecastDay.weather[0].icon
-                  }@2x.png"
+                      src=""
                       alt=""
                       width="100px"
                     />
@@ -79,9 +73,7 @@ export default function Forecast() {
                 <div className="col-6">
                   <p className="card-text">
                     <img
-                      src="https://openweathermap.org/img/wn/${
-                    forecastDay.weather[0].icon
-                  }@2x.png"
+                      src=""
                       alt=""
                       width="100px"
                     />
@@ -112,9 +104,7 @@ export default function Forecast() {
                 <div className="col-6">
                   <p className="card-text">
                     <img
-                      src="https://openweathermap.org/img/wn/${
-                    forecastDay.weather[0].icon
-                  }@2x.png"
+                      src=""
                       alt=""
                       width="100px"
                     />
@@ -143,9 +133,7 @@ export default function Forecast() {
                 <div className="col-6">
                   <p className="card-text">
                     <img
-                      src="https://openweathermap.org/img/wn/${
-                    forecastDay.weather[0].icon
-                  }@2x.png"
+                      src=""
                       alt=""
                       width="100px"
                     />
