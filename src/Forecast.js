@@ -14,9 +14,7 @@ export default function Forecast() {
               <div className="row">
                 <div className="col-6">
                   <p className="card-text">
-                    <img
-                      src=""
-                    />
+                    <img src="" />
                   </p>
                 </div>
                 <div className="col-6">
@@ -43,11 +41,7 @@ export default function Forecast() {
               <div className="row">
                 <div className="col-6">
                   <p className="card-text">
-                    <img
-                      src=""
-                      alt=""
-                      width="100px"
-                    />
+                    <img src="" alt="weather icon" width="100px" />
                   </p>
                 </div>
                 <div className="col-6">
@@ -72,11 +66,7 @@ export default function Forecast() {
               <div className="row">
                 <div className="col-6">
                   <p className="card-text">
-                    <img
-                      src=""
-                      alt=""
-                      width="100px"
-                    />
+                    <img src="" alt="weather icon" width="100px" />
                   </p>
                 </div>
                 <div className="col-6">
@@ -103,11 +93,7 @@ export default function Forecast() {
               <div className="row">
                 <div className="col-6">
                   <p className="card-text">
-                    <img
-                      src=""
-                      alt=""
-                      width="100px"
-                    />
+                    <img src="" alt="weather icon" width="100px" />
                   </p>
                 </div>
                 <div className="col-6">
@@ -132,11 +118,7 @@ export default function Forecast() {
               <div className="row">
                 <div className="col-6">
                   <p className="card-text">
-                    <img
-                      src=""
-                      alt=""
-                      width="100px"
-                    />
+                    <img src="" alt="weather icon" width="100px" />
                   </p>
                 </div>
                 <div className="col-6">
