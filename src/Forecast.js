@@ -14,7 +14,7 @@ export default function Forecast() {
               <div className="row">
                 <div className="col-6">
                   <p className="card-text">
-                    <img src="" />
+                    <img src="" alt="weather icon"/>
                   </p>
                 </div>
                 <div className="col-6">
