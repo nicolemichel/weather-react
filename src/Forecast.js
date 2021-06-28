@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Forecast.css";
+
 export default function Forecast() {
   return (
     <div className="Forecast">
@@ -7,14 +9,14 @@ export default function Forecast() {
         <div className="col-12">
           <div className="card dark">
             <div className="card-body">
-              <div className="col-12">
+              <div className="col-12 p-0">
                 <p className="card-text">Monday</p>
                 <hr />
               </div>
               <div className="row">
                 <div className="col-6">
                   <p className="card-text">
-                    <img src="" alt="weather icon"/>
+                    <img src="" alt="weather icon" />
                   </p>
                 </div>
                 <div className="col-6">
@@ -34,7 +36,7 @@ export default function Forecast() {
         <div className="col-6">
           <div className="card dark">
             <div className="card-body">
-              <div className="col-12">
+              <div className="col-12 p-0">
                 <p className="card-text">Tuesday</p>
                 <hr />
               </div>
@@ -59,7 +61,7 @@ export default function Forecast() {
         <div className="col-6">
           <div className="card dark">
             <div className="card-body">
-              <div className="col-12">
+              <div className="col-12 p-0">
                 <p className="card-text">Wednesday</p>
                 <hr />
               </div>
@@ -86,7 +88,7 @@ export default function Forecast() {
         <div className="col-6">
           <div className="card dark">
             <div className="card-body">
-              <div className="col-12">
+              <div className="col-12 p-0">
                 <p className="card-text">Thursday</p>
                 <hr />
               </div>
@@ -111,7 +113,7 @@ export default function Forecast() {
         <div className="col-6">
           <div className="card dark">
             <div className="card-body">
-              <div className="col-12">
+              <div className="col-12 p-0">
                 <p className="card-text">Friday</p>
                 <hr />
               </div>
