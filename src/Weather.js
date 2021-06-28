@@ -203,7 +203,7 @@ export default function Weather() {
                         <div className="card-body">
                           <div className="col-12">
                             <p className="card-text">
-                              <a href="https://github.com/nicolemichel/weather-project">
+                              <a href="https://github.com/nicolemichel/weather-react">
                                 Open Source Code
                               </a>
                               <span> by Nicole Michel</span>
