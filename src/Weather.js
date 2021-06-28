@@ -1,47 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Day from "./Day";
+import Today from "./Today";
+import Time from "./Time";
 import Forecast from "./Forecast";
 
 import "./Weather.css";
 
 export default function Weather() {
-  let day = new Date();
-  let weekdays = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-  ];
-
-  let months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-  ];
-  let month = months[day.getMonth()];
-  let date = day.getDate();
-  let year = day.getFullYear();
-
-  let hour = day.getHours();
-  let minutes = day.getMinutes();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
 
   const [weatherData, setWeatherData] = useState({ ready: false });
   let [city, setCity] = useState("Santa Monica");
@@ -60,6 +26,7 @@ export default function Weather() {
   function showWeather(response) {
     setWeatherData({
       ready: true,
+      date: new Date(response.data.dt * 1000),
       city: response.data.name,
       temp: response.data.main.temp,
       lowTemp: response.data.main.temp_min,
@@ -83,9 +50,7 @@ export default function Weather() {
                     <div className="card-body">
                       <div className="row">
                         <div className="col-md-6">
-                          <p className="card-text" id="current-day">
-                            {weekdays[day.getDay()]}
-                          </p>
+                          <Day date={weatherData.date} />
                         </div>
                         <div className="col-md-6">
                           <p className="card-text right">
@@ -99,18 +64,10 @@ export default function Weather() {
                       <hr />
                       <div className="row">
                         <div className="col-md-6">
-                          <p className="card-text" id="current-full-date">
-                            {month} {date}
-                            {", "}
-                            {year}
-                          </p>
+                          <Today date={weatherData.date} />
                         </div>
                         <div className="col-md-6">
-                          <p className="card-text right" id="current-time">
-                            {hour}
-                            {":"}
-                            {minutes}
-                          </p>
+                          <Time date={weatherData.date} />
                         </div>
                       </div>
                       <hr />
@@ -157,7 +114,10 @@ export default function Weather() {
                               <span id="humidity">{weatherData.humidity}</span>%
                             </li>
                             <li>
-                              Wind: <span id="wind">{Math.round(weatherData.wind)}</span>{" "}
+                              Wind:{" "}
+                              <span id="wind">
+                                {Math.round(weatherData.wind)}
+                              </span>{" "}
                               <span id="speed">km/h</span>
                             </li>
                           </ul>
