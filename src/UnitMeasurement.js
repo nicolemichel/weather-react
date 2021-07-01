@@ -27,7 +27,12 @@ export default function UnitMeasurement(props) {
             <strong className="card-title measurement" id="current-temp">
               {Math.round(props.temp)}
             </strong>
-            <a id="unit-btn" className="float-right" onClick={showImperial}>
+            <a
+              href="/"
+              id="unit-btn"
+              className="float-right"
+              onClick={showImperial}
+            >
               ºC
             </a>
           </div>
@@ -41,7 +46,12 @@ export default function UnitMeasurement(props) {
           <strong className="card-title measurement" id="current-temp">
             {convertToImperial()}
           </strong>
-          <a id="unit-btn" className="float-right" onClick={showMetric}>
+          <a
+            href="/"
+            id="unit-btn"
+            className="float-right"
+            onClick={showMetric}
+          >
             ºF
           </a>
         </div>
