@@ -57,8 +57,7 @@ hr {
 }
 
 #current-icon {
-  height: 200px;
-  width: 200px;
+  padding: 15% 0 0 20%;
 }
 
 #current-text {
@@ -70,7 +69,6 @@ hr {
 #current-temp {
   font-size: 75px;
   font-weight: 900;
-  float: left;
 }
 
 #unit-btn {
@@ -78,7 +76,7 @@ hr {
   font-weight: 900;
   color: #212629;
   text-decoration: none;
-  margin: -15px 0 0 5px;
+  margin: -15px 20px 0 -25px;
   padding: 0;
 }
 

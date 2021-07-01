@@ -3,20 +3,24 @@ import axios from "axios";
 import Day from "./Day";
 import Today from "./Today";
 import Time from "./Time";
+import WeatherInfo from "./WeatherInfo";
 import Forecast from "./Forecast";
 
 import "./Weather.css";
 
 export default function Weather() {
-
   const [weatherData, setWeatherData] = useState({ ready: false });
   let [city, setCity] = useState("Santa Monica");
+  const apiKey = "7188b6a77c9693ed94470114f98e8761";
+
+  function search() {
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showWeather);
+  }
 
   function handleSearch(event) {
     event.preventDefault();
-    const apiKey = "7188b6a77c9693ed94470114f98e8761";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(showWeather);
+    search();
   }
 
   function updateCity(event) {
@@ -34,7 +38,7 @@ export default function Weather() {
       humidity: response.data.main.humidity,
       desc: response.data.weather[0].description,
       wind: response.data.wind.speed,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      icon: response.data.weather[0].icon
     });
   }
 
@@ -71,73 +75,7 @@ export default function Weather() {
                         </div>
                       </div>
                       <hr />
-                      <div className="row">
-                        <div className="col-md-6">
-                          <img
-                            src={weatherData.icon}
-                            alt={weatherData.desc}
-                            id="current-icon"
-                          />
-                        </div>
-                        <div className="col-md-6" id="current-text">
-                          <p className="card-text center">Currently</p>
-                          <div className="float-left mt-5">
-                            <div className="center">
-                              <strong
-                                className="card-title measurement"
-                                id="current-temp"
-                              >
-                                {Math.round(weatherData.temp)}
-                              </strong>
-                              <p id="unit-btn" className="float-right">
-                                ºC
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <hr />
-                      <div className="row">
-                        <div className="col-12">
-                          <h2 className="card-title">
-                            <strong>
-                              <em>CONDITIONS</em>
-                            </strong>
-                            <hr />
-                          </h2>
-                        </div>
-                        <div className="col-md-6">
-                          <h3 id="description">{weatherData.desc}</h3>
-                          <ul>
-                            <li>
-                              Humidity:{" "}
-                              <span id="humidity">{weatherData.humidity}</span>%
-                            </li>
-                            <li>
-                              Wind:{" "}
-                              <span id="wind">
-                                {Math.round(weatherData.wind)}
-                              </span>{" "}
-                              <span id="speed">km/h</span>
-                            </li>
-                          </ul>
-                        </div>
-                        <div className="col-md-6">
-                          <p className="card-text center weekday-weather-temps">
-                            <span id="min-temp">
-                              {Math.round(weatherData.lowTemp)}
-                            </span>
-                            <br />
-                            <br />
-                            <strong className="high">
-                              <span id="max-temp">
-                                {Math.round(weatherData.highTemp)}
-                              </span>
-                            </strong>
-                          </p>
-                          <hr className="low-over-high" />
-                        </div>
-                      </div>
+                      <WeatherInfo data={weatherData} />
                     </div>
                   </div>
                 </div>
@@ -199,11 +137,7 @@ export default function Weather() {
       </div>
     );
   } else {
-    const apiKey = "7188b6a77c9693ed94470114f98e8761";
-    let city = "Santa Monica";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(showWeather);
-
+    search();
     return <h1 className="light">Loading...</h1>;
   }
 }
