@@ -39,60 +39,6 @@ hr {
   top: 15px;
 }
 
-/*left side of page*/
-.left-side {
-  box-shadow: 6px 6px 3px rgba(214, 213, 213, 0.2);
-  height: 100%;
-  color: #212629 !important;
-}
-
-#location-btn {
-  color: transparent;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #212629;
-  margin-right: 3%;
-}
-#location-btn:hover {
-  color: #212629;
-}
-
-#current-icon {
-  padding: 15% 0 0 20%;
-}
-
-#current-text {
-  font-size: 25px;
-  padding: 30px 0;
-  justify-content: center;
-}
-
-#current-temp {
-  font-size: 75px;
-  font-weight: 900;
-}
-
-#unit-btn {
-  font-size: 50px;
-  font-weight: 900;
-  color: #212629;
-  text-decoration: none;
-  margin: -15px 20px 0 -25px;
-  padding: 0;
-}
-
-#description::first-letter {
-  text-transform: capitalize;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-.news-icon {
-  font-size: 75px;
-}
-
 /*right side of page*/
 .right-side {
   height: 100%;

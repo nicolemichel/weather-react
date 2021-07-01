@@ -1,5 +1,8 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
+import UnitMeasurement from "./UnitMeasurement";
+
+import "./WeatherInfo.css";
 
 export default function WeatherInfo(props) {
   return (
@@ -12,16 +15,7 @@ export default function WeatherInfo(props) {
         </div>
         <div className="col-md-6" id="current-text">
           <p className="card-text center">Currently</p>
-          <div className="mt-5">
-            <div className="center">
-              <strong className="card-title measurement" id="current-temp">
-                {Math.round(props.data.temp)}
-              </strong>
-              <p id="unit-btn" className="float-right">
-                ºC
-              </p>
-            </div>
-          </div>
+          <UnitMeasurement temp={props.data.temp}/>
         </div>
       </div>
       <hr />
