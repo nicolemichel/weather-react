@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ForecastDay from "./ForecastDay";
 import axios from "axios";
 
@@ -14,37 +14,38 @@ export default function Forecast(props) {
     console.log(response.data);
   }
 
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coordinates])
+
   if (loaded) {
     return (
       <div className="Forecast">
         <div className="row">
           <div className="col-12">
-            {forecast.map(function(dailyForecast, index) {
-              if (index === 1) {
-                return (
-                  <div className="DailyForecast" key={index}>
-                    <ForecastDay day={dailyForecast} />
-                  </div>
-                );
-              }
-              if (index > 1 && index < 6) {
-                return (
-                  <div className="row">
-                    <div className="col-6">
-                      {forecast.map(function(dailyForecast, index) {
-                        if (index < 6) {
-                          return (
-                            <div className="DailyForecast" key={index}>
-                              <ForecastDay day={dailyForecast} />
-                            </div>
-                          );
-                        }
-                      })}
+            <div className="row">
+              {forecast.map(function(dailyForecast, index) {
+                if (index === 1) {
+                  return (
+                    <div className="col-12">
+                      <div className="DailyForecast" key={index}>
+                        <ForecastDay day={dailyForecast} />
+                      </div>
                     </div>
-                  </div>
-                );
-              }
-            })}
+                  );
+                }
+                if (index > 1 && index < 6) {
+                  return (
+                    <div className="col-6 p-3">
+                      <div className="DailyForecast" key={index}>
+                        <ForecastDay day={dailyForecast} />
+                      </div>
+                    </div>
+                  );
+                }
+                return null;
+              })}
+            </div>
           </div>
         </div>
       </div>

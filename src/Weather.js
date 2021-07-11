@@ -39,7 +39,7 @@ export default function Weather() {
       desc: response.data.weather[0].description,
       wind: response.data.wind.speed,
       icon: response.data.weather[0].icon,
-      coordinates: response.data.coord
+      coordinates: response.data.coord,
     });
   }
 

@@ -1,6 +1,5 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
-import UnitMeasurement from "./UnitMeasurement";
 
 import "./WeatherInfo.css";
 
@@ -9,13 +8,18 @@ export default function WeatherInfo(props) {
     <div className="WeatherInfo">
       <div className="row">
         <div className="col-md-6">
-        <div id="current-icon">
-          <WeatherIcon code={props.data.icon} color="#" size={125}/>
-        </div>
+          <div id="current-icon">
+            <WeatherIcon code={props.data.icon} color="#" size={125} />
+          </div>
         </div>
         <div className="col-md-6" id="current-text">
           <p className="card-text center">Currently</p>
-          <UnitMeasurement temp={props.data.temp}/>
+          <p className="pt-4" id="current-temp">
+            {Math.round(props.data.temp)}
+          </p>
+          <span id="unit-btn">
+            ºC
+          </span>
         </div>
       </div>
       <hr />
