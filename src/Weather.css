@@ -1,23 +1,13 @@
-/*applies to both sides of page*/
-.light {
-  color: #f2f2f1;
-}
-
 .dark {
-  background: #212629 !important;
+  background: rgba(83, 140, 179, 0.8) !important;
   border-radius: 5px;
-  box-shadow: 1px 6px 5px rgba(33, 38, 41, 0.35);
-  color: #f2f2f1;
-  margin-bottom: 3%;
 }
 
 hr {
-  border: 0.25px solid #e5e5e5 !important;
+  border: 0.25px solid #393939 !important;
 }
 
 .holder {
-  background: rgb(33, 38, 41);
-  box-shadow: 1px 6px 5px rgba(33, 38, 41, 0.8);
   margin: 5%;
 }
 
@@ -25,53 +15,33 @@ hr {
   text-align: right;
 }
 
-.center {
-  text-align: center;
-}
-
-.low-over-high {
-  position: relative;
-  bottom: 35%;
-}
-
-.high {
-  position: relative;
-  top: 15px;
-}
-
-/*right side of page*/
-.right-side {
-  height: 100%;
-}
-
 #city-input {
-  border: 1px solid #212629;
+  border: 1px solid #393939;
   border-radius: 5px;
   margin-bottom: 3%;
   width: 80%;
 }
 
 #search-btn {
-  background: #212629;
+  background: #276893;
   border: none;
   border-radius: 5px;
-  box-shadow: 1px 3px 5px rgba(33, 38, 41, 0.35);
-  color: #f2f2f1;
+  color: #f5f5f5;
   font-size: 20px;
-  padding: 11%;
+  padding: 7%;
   transform: all 200ms ease-in;
 }
 #search-btn:hover {
-  background: #f2f2f1;
-  border: 1px solid #212629;
-  color: #212629;
+  background: none;
+  border: 1px solid #276893;
+  color: #276893;
 }
 
 .sourced {
-  color: #ec6e4b !important;
   text-decoration: none;
+  color: #276893;
 }
 .sourced:hover {
-  color: #f2f2f1 !important;
   text-decoration: none;
+  color: #393939;
 }

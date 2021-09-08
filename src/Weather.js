@@ -39,7 +39,7 @@ export default function Weather() {
       desc: response.data.weather[0].description,
       wind: response.data.wind.speed,
       icon: response.data.weather[0].icon,
-      coordinates: response.data.coord,
+      coordinates: response.data.coord
     });
   }
 
@@ -50,9 +50,32 @@ export default function Weather() {
           <div className="card holder dark">
             <div className="card-body">
               <div className="row">
-                <div className="col-md-6">
-                  <div className="card left-side">
+                <div className="col-12">
+                  <div className="card">
                     <div className="card-body">
+                      <form id="search-form" onSubmit={handleSearch}>
+                        <div className="row">
+                          <div className="col-10">
+                            <input
+                              type="search"
+                              placeholder="Enter a city.."
+                              className="form-control w-100"
+                              id="city-input"
+                              autoComplete="off"
+                              onChange={updateCity}
+                            />
+                          </div>
+                          <div className="col-2">
+                            <button
+                              type="submit"
+                              id="search-btn"
+                              className="w-100"
+                            >
+                              <i className="fas fa-search"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </form>
                       <div className="row">
                         <div className="col-md-6">
                           <Day date={weatherData.date} />
@@ -80,51 +103,24 @@ export default function Weather() {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-6">
-                  <div className="card right-side">
+                <div className="col-12 mt-3">
+                  <div className="forecast">
+                    <Forecast coordinates={weatherData.coordinates} />
+                  </div>
+                  <div className="card mt-3">
                     <div className="card-body">
-                      <form id="search-form" onSubmit={handleSearch}>
-                        <div className="row">
-                          <div className="col-10">
-                            <input
-                              type="search"
-                              placeholder="Enter a city.."
-                              className="form-control w-100"
-                              id="city-input"
-                              autoComplete="off"
-                              onChange={updateCity}
-                            />
-                          </div>
-                          <div className="col-2">
-                            <button
-                              type="submit"
-                              id="search-btn"
-                              className="w-100"
-                            >
-                              <i className="fas fa-search"></i>
-                            </button>
-                          </div>
-                        </div>
-                      </form>
-                      <div className="forecast">
-                        <Forecast coordinates={weatherData.coordinates}/>
-                      </div>
                       <div className="row">
                         <div className="col-12">
-                          <div className="card dark">
-                            <div className="card-body">
-                              <div className="col-12 p-0 text-center">
-                                <p className="card-text">
-                                  <a
-                                    href="https://github.com/nicolemichel/weather-react"
-                                    className="sourced"
-                                  >
-                                    Open Source Code
-                                  </a>
-                                  <span> by Nicole Michel</span>
-                                </p>
-                              </div>
-                            </div>
+                          <div className="col-12 text-center">
+                            <p className="card-text">
+                              <a
+                                href="https://github.com/nicolemichel/weather-react"
+                                className="sourced"
+                              >
+                                Open Source Code
+                              </a>
+                              <span> by Nicole Michel</span>
+                            </p>
                           </div>
                         </div>
                       </div>

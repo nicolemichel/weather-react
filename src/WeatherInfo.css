@@ -1,28 +1,25 @@
-/*left side of page*/
-.left-side {
-  box-shadow: 6px 6px 3px rgba(214, 213, 213, 0.2);
-  height: 100%;
-  color: #212629 !important;
-}
-
 #location-btn {
   color: transparent;
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #212629;
+  -webkit-text-stroke-color: #393939;
   margin-right: 3%;
 }
 #location-btn:hover {
-  color: #212629;
+  color: #393939;
 }
 
 #current-icon {
-  padding: 15% 0 0 20%;
+  padding: 10% 0 0 0;
 }
 
-#current-text {
-  font-size: 25px;
-  padding: 30px 0;
-  justify-content: center;
+#current-temp {
+  font-size: 60px;
+  font-weight: 900;
+  margin: 5% 0 0 5%;
+}
+
+#description {
+  font-size: 18px;
 }
 
 #description::first-letter {
@@ -34,23 +31,17 @@ ul {
   padding: 0;
 }
 
-/*for when I figure out how to pull the news*/
+/*for when I figure out how to pull the news and change unit in forecast*/
 .news-icon {
   font-size: 75px;
-}
-
-#current-temp {
-  font-size: 75px;
-  font-weight: 900;
-  margin-left: 8%;
 }
 
 #unit-btn {
   font-size: 40px;
   font-weight: 900;
-  color: #212629;
+  color: #393939;
   text-decoration: none;
-  margin: -60px 30px 0 0;
+  margin: 0 30px 0 0;
   padding: 0;
   float: right;
 }

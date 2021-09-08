@@ -6,33 +6,20 @@ import "./WeatherInfo.css";
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
-      <div className="row">
-        <div className="col-md-6">
+      <div className="row text-center">
+        <div className="col-md-4">
           <div id="current-icon">
-            <WeatherIcon code={props.data.icon} color="#" size={125} />
+            <WeatherIcon code={props.data.icon} color="#393939" size={100} />
           </div>
         </div>
-        <div className="col-md-6" id="current-text">
-          <p className="card-text center">Currently</p>
+        <div className="col-md-3">
+          <strong>Currently</strong>
           <p className="pt-4" id="current-temp">
             {Math.round(props.data.temp)}
+            <span id="unit-btn">ºC</span>
           </p>
-          <span id="unit-btn">
-            ºC
-          </span>
         </div>
-      </div>
-      <hr />
-      <div className="row">
-        <div className="col-12">
-          <h2 className="card-title">
-            <strong>
-              <em>CONDITIONS</em>
-            </strong>
-            <hr />
-          </h2>
-        </div>
-        <div className="col-md-6">
+        <div className="col-4">
           <h3 id="description">{props.data.desc}</h3>
           <ul>
             <li>
@@ -43,17 +30,12 @@ export default function WeatherInfo(props) {
               <span id="speed">km/h</span>
             </li>
           </ul>
-        </div>
-        <div className="col-md-6">
           <p className="card-text center weekday-weather-temps">
-            <span id="min-temp">{Math.round(props.data.lowTemp)}</span>
-            <br />
-            <br />
-            <strong className="high">
-              <span id="max-temp">{Math.round(props.data.highTemp)}</span>
-            </strong>
+            <span id="min-temp">{Math.round(props.data.lowTemp)} |</span>{" "}
+            <span id="max-temp">
+              <strong>{Math.round(props.data.highTemp)}</strong>
+            </span>
           </p>
-          <hr className="low-over-high" />
         </div>
       </div>
     </div>

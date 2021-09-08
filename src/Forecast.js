@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import ForecastDay from "./ForecastDay";
 import axios from "axios";
 
-import "./Forecast.css";
-
 export default function Forecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState(null);
@@ -11,41 +9,29 @@ export default function Forecast(props) {
   function handleResponse(response) {
     setForecast(response.data.daily);
     setLoaded(true);
-    console.log(response.data);
   }
 
   useEffect(() => {
     setLoaded(false);
-  }, [props.coordinates])
+  }, [props.coordinates]);
 
   if (loaded) {
     return (
       <div className="Forecast">
-        <div className="row">
-          <div className="col-12">
-            <div className="row">
-              {forecast.map(function(dailyForecast, index) {
-                if (index === 1) {
-                  return (
-                    <div className="col-12">
-                      <div className="DailyForecast" key={index}>
-                        <ForecastDay day={dailyForecast} />
-                      </div>
+        <div className="col-12">
+          <div className="row">
+            {forecast.map(function(dailyForecast, index) {
+              if (index < 5) {
+                return (
+                  <div className="col">
+                    <div className="DailyForecast" key={index}>
+                      <ForecastDay day={dailyForecast} />
                     </div>
-                  );
-                }
-                if (index > 1 && index < 6) {
-                  return (
-                    <div className="col-6 p-3">
-                      <div className="DailyForecast" key={index}>
-                        <ForecastDay day={dailyForecast} />
-                      </div>
-                    </div>
-                  );
-                }
-                return null;
-              })}
-            </div>
+                  </div>
+                );
+              }
+              return null;
+            })}
           </div>
         </div>
       </div>

@@ -31,29 +31,31 @@ export default function ForecastDay(props) {
 
   return (
     <div className="ForecastDay">
-      <div className="card dark">
+      <div className="card text-center">
         <div className="card-body">
           <div className="col-12 p-0">
             <p className="card-text">{formattedDay()}</p>
             <hr />
           </div>
-          <div className="row">
-            <div className="col-6">
+          <div className="row text-center">
+            <div className="col">
               <p className="card-text">
                 <WeatherIcon
                   code={props.day.weather[0].icon}
-                  color="#f2f2f1"
-                  size={80}
+                  color="#276893"
+                  size={60}
                 />
               </p>
             </div>
-            <div className="col-6">
-              <p className="card-text center weekday-weather-temps pt-3">
-                {minTemp()}
-                <br />
-                <strong className="high">{maxTemp()}</strong>
-              </p>
-              <hr className="low-over-high" />
+          </div>
+          <div className="row">
+            <div className="col">
+              <span className="card-text center weekday-weather-temps pt-3">
+                {minTemp()} |
+              </span>
+              <span>
+                <strong> {maxTemp()}</strong>
+              </span>
             </div>
           </div>
         </div>
